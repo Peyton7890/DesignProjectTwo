@@ -44,6 +44,8 @@ public:
 
     Song* GetNext();
 
+    void PrintPlaylist();
+
 };
 
 #endif 

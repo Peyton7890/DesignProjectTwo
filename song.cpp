@@ -39,3 +39,14 @@ void Song::InsertAfter(Song* nodeLoc) {
 Song* Song::GetNext() {
 	return this->nextNodePtr;
 }
+
+void Song::PrintPlaylist() {
+
+    cout << "Title: " << songName << endl;
+    cout << "Artist: " << artistName << endl; 
+    cout << "Rank: " << rank << endl;
+    cout << "Year: " << year << endl;
+    cout << "Decade: " << decade << endl;
+    cout << "Genre: " << genre << endl;
+    cout << "Group Type: " << groupType << endl << endl;
+}

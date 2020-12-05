@@ -21,7 +21,10 @@ public:
     void makeMaster();
     ifstream file;
     
-    void PrintPlaylist();
 };
+
+Song* head;
+Song* curr;
+Song* last;
 
 #endif 

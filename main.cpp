@@ -17,10 +17,10 @@ using namespace std;
 int main() {
     char userInput;
 
-    Master tmp;
+    Master master;
     
-    tmp.makeMaster();
-    tmp.PrintPlaylist();
+    master.makeMaster();
+    master.PrintPlaylist();
 
 
 
@@ -41,7 +41,11 @@ int main() {
             cout << "delete" << endl;
         }
         else if (userInput == 'p') {
-            cout << "print" << endl;
+            curr = head;
+            while (curr != nullptr){
+                curr->PrintPlaylist();
+                curr = curr->GetNext();
+            }
         }
         else if (userInput == 'z') {
             cout << "merge" << endl;

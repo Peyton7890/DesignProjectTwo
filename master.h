@@ -15,13 +15,11 @@
 
 using namespace std;
 
+Song* makeMaster();
+void printlist(Song* head);
+Song* createByDecade(Song* headm);
+Song* createByGroupType(Song* headm);
 
-class Master : public Song{
-public:
-    void makeMaster(Song* head, Song* curr, Song* last);
-    ifstream file;
-    
-};
 
 
 

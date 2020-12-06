@@ -40,11 +40,29 @@ public:
 
     Song(string tempSongName, string tempArtistName, int tempRank, int tempYear, char tempGroupType, string tempGenre);
 
-    Song(string tempSongName, string tempArtistName, int tempRank, int tempYear, char tempGroupType, string tempGenre, Song* nextLoc);
-
     void InsertAfter(Song* nodeLoc);
 
     Song* GetNext();
+
+    void SetSongName(string tempSongName);
+    string GetSongName();
+
+    void SetArtistName(string tempArtistName);
+    string GetArtistName();
+
+    void SetRank(int tempRank);
+    int GetRank();
+
+    void SetYear(int tempYear);
+    int GetYear();
+
+    void SetGroupType(char temmpGroupType);
+    char GetGroupType();
+
+    void SetGenre(string tempGenre);
+    string GetGenre();
+
+    int GetDecade();
 
     void PrintPlaylist();
 

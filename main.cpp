@@ -23,56 +23,67 @@ int main() {
     Song* p3;
     Song* p4;
     Song* p5;
+    string p1name;
+    string p2name;
+    string p3name;
+    string p4name;
+    string p5name;
+
+
 
     master = makeMaster();
 
     //printlist(master);
 
-    //p1 = createByDecade(master);
+    p1 = createByDecade(master);
     //printlist(p1);
 
     //p2 = createByGroupType(master);
     //printlist(p2);
 
-    p3 = createByDecade(master);
-    p3 = createByGroupType(p3);
-    printlist(p3);
 
     
 
 
-//     //Prompts user to enter what type of function they want to use
-//     cout << "Enter 'q' to quit, 'c' to create playlist, 'm' to modify";
-//     cout << ", 'd' to delete, and 'p' to print" << endl;
-//     cin >> userInput;
+    //Prompts user to enter what type of function they want to use
+    cout << "Enter 'q' to quit, 'c' to create playlist, 'm' to modify";
+    cout << ", 'd' to delete, and 'p' to print" << endl;
+    cin >> userInput;
 
-//     //Checks for user input and calls the corresponding function
-//     while (userInput != 'q') {
-//         if (userInput == 'c') {
-//             if (numPlaylists < 5) {
-//                 cout << "create" << endl;
-//                 numPlaylists++;
-//             }
-//             else {
-//                 cout << "You already have 5 playlists, delete one to make a new one" << endl;
-//             }
-//         }
-//         else if (userInput == 'm') {
-//             cout << "modify" << endl;
-//         }
-//         else if (userInput == 'd') {
-//             cout << "delete" << endl;
-//         }
-//         else if (userInput == 'p') {
-        
-//         }
-//         else {
-//             cout << "Not a valid option, please try again." << endl;
-//         }
-//         cout << "Enter 'q' to quit, 'c' to create playlist, 'm' to modify";
-//         cout << ", 'd' to delete, 'p' to print, and z to merge" << endl;
-//         cin >> userInput;
-//     }
+    //Checks for user input and calls the corresponding function
+    while (userInput != 'q') {
+        if (userInput == 'c') {
+            if (numPlaylists < 5) {
+                cout << "Enter a name for your playlist" << endl;
+                if (numPlaylists == 0) { cin >> p1name;}
+                else if (numPlaylists == 1) { cin >> p2name;}
+                else if (numPlaylists == 2) { cin >> p3name;}
+                else if (numPlaylists == 3) { cin >> p4name;}
+                else if (numPlaylists == 4) { cin >> p5name;}
+                numPlaylists++;
+            }
+            else {
+                cout << "You already have 5 playlists, delete one to make a new one" << endl;
+            }
+        }
+        else if (userInput == 'm') {
+            cout << "modify" << endl;
+        }
+        else if (userInput == 'd') {
+            
+            deletePlaylist(p1);
+            //numPlaylists--;
+        }
+        else if (userInput == 'p') {
+            printlist(p1);
+        }
+        else {
+            cout << "Not a valid option, please try again." << endl;
+        }
+        cout << "Enter 'q' to quit, 'c' to create playlist, 'm' to modify";
+        cout << ", 'd' to delete, 'p' to print, and z to merge" << endl;
+        cin >> userInput;
+    }
 
      return 0;
 }

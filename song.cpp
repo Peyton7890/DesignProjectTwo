@@ -16,7 +16,9 @@ Song::Song(string tempSongName, string tempArtistName, int tempRank, int tempYea
         this->groupType = tempGroupType;
         this->genre = tempGenre;
         this->nextNodePtr = NULL;
-    }
+}
+
+Song::~Song(){}
 
 void Song::InsertAfter(Song* nodeLoc) {
     Song* tmpNext;

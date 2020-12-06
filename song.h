@@ -40,6 +40,8 @@ public:
 
     Song(string tempSongName, string tempArtistName, int tempRank, int tempYear, char tempGroupType, string tempGenre);
 
+    ~Song();
+
     void InsertAfter(Song* nodeLoc);
 
     Song* GetNext();

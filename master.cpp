@@ -30,7 +30,7 @@ Song* makeMaster() {
     head = new Song();
     last = head;
 
-    for (int i = 0; i < 50; i++) {
+    for (int i = 0; i < 20; i++) {
         string str;
         string tempSongName;
         string tempArtistName;
@@ -58,7 +58,7 @@ void printlist(Song* head) {
     while (curr != nullptr){
         curr->PrintPlaylist();
         curr = curr->GetNext();
-           }
+    }
 }
 
 Song* createByDecade(Song* headm) {
@@ -123,6 +123,83 @@ Song* createByGroupType(Song* headm) {
         }
         currm = currm->GetNext();
 
+    }
+    return (headp);
+}
+Song* createByGenre(Song* headm){
+    Song* currm;
+    Song* lastm;
+
+    Song* headp;
+    Song* currp;
+    Song* lastp;
+    string temp;
+    
+    cout << "enter genre" << endl;
+    cin >> temp;
+
+    headp = new Song();
+    lastp = headp;
+    currm = headm->GetNext();
+
+    while (currm != nullptr) {
+        if (currm->GetGenre() == temp) {
+            currp = new Song(currm->GetSongName(),
+                            currm->GetArtistName(), 
+                            currm-> GetRank(), 
+                            currm->GetYear(),
+                            currm->GetGroupType(), 
+                            currm->GetGenre());
+            lastp->InsertAfter(currp); 
+            lastp = currp;
+        }
+        currm = currm->GetNext();
+
+    }
+    return (headp);
+}
+
+Song* createByRank(Song* headm){
+    Song* currm;
+    Song* lastm;
+
+    Song* headp;
+    Song* currp;
+    Song* lastp;
+    int temp;
+    
+    cout << "Enter your desired ranks, then enter '-1' to quit" << endl;
+    cin >> temp;
+
+    headp = new Song();
+    lastp = headp;
+
+    while (temp != -1){
+        currm = headm->GetNext();
+        while (currm != nullptr) {
+            if (currm->GetRank() == temp) {
+                currp = new Song(currm->GetSongName(),
+                                currm->GetArtistName(), 
+                                currm-> GetRank(), 
+                                currm->GetYear(),
+                                currm->GetGroupType(), 
+                                currm->GetGenre());
+                lastp->InsertAfter(currp); 
+                lastp = currp;
+            }
+            currm = currm->GetNext();
+        }
+        cin >> temp;
+    }
+    return (headp);
+}
+
+Song* deletePlaylist(Song* headp){
+    
+    while (headp != nullptr) {
+        Song* tmp = headp->GetNext();
+        delete headp;
+        headp = tmp;
     }
     return (headp);
 }

@@ -19,6 +19,9 @@ Song* makeMaster();
 void printlist(Song* head);
 Song* createByDecade(Song* headm);
 Song* createByGroupType(Song* headm);
+Song* createByGenre(Song* headm);
+Song* createByRank(Song* headm);
+Song* deletePlaylist(Song* headp);
 
 
 

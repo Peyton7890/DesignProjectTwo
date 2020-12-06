@@ -24,8 +24,10 @@ protected:
     string genre;
     char groupType;
     Song* nextNodePtr;
+    
 
 public:
+
     Song(){
         songName = "";
         artistName = "";

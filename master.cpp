@@ -12,7 +12,7 @@
 
 using namespace std;
 
-void Master::makeMaster() {
+void Master::makeMaster(Song* head, Song* curr, Song* last) {
     
     file.open("billboard_200.txt");
 

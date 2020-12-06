@@ -16,11 +16,14 @@ using namespace std;
 
 int main() {
     char userInput;
-
     Master master;
+    int numPlaylists = 0;
+
+    Song* head;
+    Song* curr;
+    Song* last;
     
-    master.makeMaster();
-    master.PrintPlaylist();
+    master.makeMaster(head, curr, last);
 
 
 
@@ -32,7 +35,13 @@ int main() {
     //Checks for user input and calls the corresponding function
     while (userInput != 'q') {
         if (userInput == 'c') {
-            cout << "create" << endl;
+            if (numPlaylists < 5) {
+                cout << "create" << endl;
+                numPlaylists++;
+            }
+            else {
+                cout << "You already have 5 playlists, delete one to make a new one" << endl;
+            }
         }
         else if (userInput == 'm') {
             cout << "modify" << endl;
@@ -41,7 +50,7 @@ int main() {
             cout << "delete" << endl;
         }
         else if (userInput == 'p') {
-            curr = head;
+            curr = head; 
             while (curr != nullptr){
                 curr->PrintPlaylist();
                 curr = curr->GetNext();

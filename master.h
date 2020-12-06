@@ -18,13 +18,11 @@ using namespace std;
 
 class Master : public Song{
 public:
-    void makeMaster();
+    void makeMaster(Song* head, Song* curr, Song* last);
     ifstream file;
     
 };
 
-Song* head;
-Song* curr;
-Song* last;
+
 
 #endif 

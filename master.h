@@ -3,7 +3,7 @@
 /*** Course: Computational Problem Solving CPET-II      ***/
 /*** Developers:  Peyton Martin                         ***/
 /*** Date : 09/21/2020                                  ***/
-/*** Description: header file for Master class          ***/
+/*** Description: header file for Master                ***/
 /**********************************************************/
 #ifndef MASTER_H
 #define MASTER_H
@@ -21,7 +21,8 @@ Song* createByDecade(Song* headm);
 Song* createByGroupType(Song* headm);
 Song* createByGenre(Song* headm);
 Song* createByRank(Song* headm);
-Song* deletePlaylist(Song* headp);
+Song* createPlaylist(Song* headp);
+Song* modifyPlaylist(Song* headp, Song* Master);
 
 
 

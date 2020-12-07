@@ -28,6 +28,7 @@ protected:
 
 public:
 
+    //Default contstructor for Song
     Song(){
         songName = "";
         artistName = "";
